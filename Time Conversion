@@ -1,0 +1,48 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    s2 = s[-1]
+    ans = []
+    if s2[2]=='P':
+        if int(s[0])!=12:
+            ans.append(str(int(s[0])+12))
+            ans.append(str(s[1]))
+            ans.append(s2[0:2])
+        else:
+            ans.append(s[0])
+            ans.append(str(s[1]))
+            ans.append(s2[0:2])
+    else:
+        if int(s[0])!=12:
+            ans.append(s[0])
+            ans.append(str(s[1]))
+            ans.append(s2[0:2])
+        else:
+            ans.append(str(int(s[0])-12)+str(0))
+            ans.append(str(s[1]))
+            ans.append(s2[0:2])
+    s3=":"
+      
+    ans2 = s3.join(ans)      
+    return print(ans2)
+
+hr = input().split(":")
+#txt.split("#")
+timeConversion(hr)
+#if __name__ == '__main__':
+#    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+#    s = input()
+
+#    result = timeConversion(s)
+
+#    f.write(result + '\n')
+
+#    f.close()
+
