@@ -1,0 +1,77 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countApplesAndOranges function below.
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    sumapple = []
+    sumorange = []
+    for i in range(0,len(apples)):
+        sumapple.append(apples[i]+a)
+    
+    for j in range(0,len(oranges)):
+        sumorange.append(oranges[j]+b)
+    
+    ansapl = 0
+    ansor = 0
+    for i in range(0,len(apples)):
+        if sumapple[i]>=s and sumapple[i]<=t:
+            ansapl =ansapl + 1
+    
+    for j in range(0,len(oranges)):
+        if sumorange[j]>=s and sumorange[j]<=t:
+            ansor =ansor + 1
+    
+    print(ansapl)
+    print(ansor)
+
+st = input().split()
+s = int(st[0])
+t = int(st[1])
+ab = input().split()
+a = int(ab[0])
+b = int(ab[1])
+mn = input().split()
+app = int(mn[0])
+ora = int(mn[1])
+
+"""
+st = list(int,map(input().rstrip().split()))
+ab = list(int,map(input().rstrip().split()))
+mn = list(int,map(input().rstrip().split()))
+"""
+apples = list(map(int,input().rstrip().split()))
+oranges = list(map(int,input().rstrip().split()))
+
+countApplesAndOranges(s, t, a, b, apples, oranges)
+"""
+if __name__ == '__main__':
+    st = input().split()
+
+    s = int(st[0])
+
+    t = int(st[1])
+
+    ab = input().split()
+
+    a = int(ab[0])
+
+    b = int(ab[1])
+
+    mn = input().split()
+
+    m = int(mn[0])
+
+    n = int(mn[1])
+
+    apples = list(map(int, input().rstrip().split()))
+
+    oranges = list(map(int, input().rstrip().split()))
+
+    countApplesAndOranges(s, t, a, b, apples, oranges)
+    
+"""
