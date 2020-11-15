@@ -1,0 +1,44 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+n = int(input())
+arr = list(map(int,input().rstrip().split()))
+
+# Complete the migratoryBirds function below.
+def migratoryBirds(arr):
+    freq=[]
+    high = max(arr)
+    for i in range(1,high+1):
+        count = 0
+        for j in range(0,len(arr)):
+            if arr[j]==i:
+                count = count+1
+        freq.append(count)
+    
+    highindex=[]
+    for i in range(0,len(freq)):
+        if freq[i]==max(freq):
+            highindex.append(i+1)
+    return print(min(highindex))
+
+
+migratoryBirds(arr)
+"""
+    if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = migratoryBirds(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+"""
