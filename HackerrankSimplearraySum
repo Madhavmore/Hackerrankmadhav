@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import os
+import sys
+#ar_count = int(input())
+#ar = list(map(int, input().rstrip().split()))
+
+#ar_count=input().split()[0][0]
+
+#ar = list(map(int, input().rstrip().split()))
+
+
+#
+# Complete the simpleArraySum function below.
+#
+def simpleArraySum(ar,ar_count):
+    ans = 0
+    for i in range(0,ar_count):
+        ans = ans + ar[i]
+    return ans
+    #result = simpleArraySum(ar,ar_count)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    ar_count = int(input())
+    ar = list(map(int, input().rstrip().split()))
+    result = simpleArraySum(ar,ar_count)
+    fptr.write(str(result))
+    fptr.close()
