@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    pos = 0
+    neg = 0
+    zer = 0
+    for i in range(0,n):
+        if arr[i]>0:
+            pos +=1
+        if arr[i]<0:
+            neg +=1
+        if arr[i]==0:
+            zer +=1
+    
+    #return print(arr)
+    return print(pos/n,'\n',neg/n,'\n',zer/n)
+
+n = int(input())
+arr1 = list(map(int, input().rstrip().split()))
+
+plusMinus(arr1)
+
