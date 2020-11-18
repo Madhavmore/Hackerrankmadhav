@@ -1,0 +1,27 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the catAndMouse function below.
+def catAndMouse(ar,n):
+    my_dict = {'a':'Cat A', 'b':'Cat B', 'c':'Mouse C'}
+    for i in range(0,n):
+        tr = ar[i]
+        if abs(tr[0]-tr[2])>abs(tr[1]-tr[2]):
+            print(my_dict['b'])
+        elif abs(tr[0]-tr[2])<abs(tr[1]-tr[2]):
+            print(my_dict['a'])
+        else:
+            print(my_dict['c'])
+    #return print(my_dict)
+
+
+n = int(input())
+ar = []
+for i in range(0,n):
+    ar.append(list(map(int,input().rstrip().split())))
+catAndMouse(ar,n)
