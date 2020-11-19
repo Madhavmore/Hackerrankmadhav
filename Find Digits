@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+t = int(input())
+n = []
+for i in range(0,t):
+    n.append(int(input()))
+# Complete the findDigits function below.
+def findDigits(n):
+    #tr = [int(i) for i in str(n[0])]
+    #return print(tr)
+    
+    for i in range(0,len(n)):
+        d = 0
+        tr = [int(i) for i in str(n[i])]
+        for j in range(0,len(tr)):
+            if tr[j]!=0 and n[i]%tr[j]==0:
+                d += 1
+        print(d)
+        
+
+ 
+findDigits(n)
