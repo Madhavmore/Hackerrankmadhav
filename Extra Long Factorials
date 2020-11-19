@@ -1,0 +1,45 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+n = int(input())
+# Complete the extraLongFactorials function below.
+def extraLongFactorials(n):
+    if n<20:
+        ans = 1
+        for i in range(0,n):
+            ans = ans*(i+1)
+        print(ans)
+    elif n>=20 and n<40:
+        ans = 121645100408832000
+        for i in range(19,n):
+            ans = ans*(i+1)
+        print(ans)
+    elif n>=40 and n<60:
+        ans = 20397882081197443358640281739902897356800000000
+        for i in range(39,n):
+            ans = ans*(i+1)
+        print(ans)
+    elif n>=60 and n<80:
+        ans = 138683118545689835737939019720389406345902876772687432540821294940160000000000000
+        for i in range(59,n):
+            ans = ans*(i+1)
+        print(ans)
+    elif n>80 and n<=100:
+        ans = 894618213078297528685144171539831652069808216779571907213868063227837990693501860533361810841010176000000000000000000
+        for i in range(79,n):
+            ans = ans*(i+1)
+        print(ans)    
+
+    
+extraLongFactorials(n)
+"""
+if __name__ == '__main__':
+    n = int(input())
+
+    extraLongFactorials(n)
+"""
