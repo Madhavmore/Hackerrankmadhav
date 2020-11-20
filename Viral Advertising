@@ -1,0 +1,38 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+n = int(input())
+# Complete the viralAdvertising function below.
+def viralAdvertising(n):
+    s = []    
+    a = 0
+    b = 2
+    if n==1:
+        print(2)
+    else:
+        for i in range(2,n+1):
+            
+            b = int((3*b/2))
+            s.append(b)
+        ans = sum(s)+int(5/2)
+        print(ans)
+viralAdvertising(n)
+
+
+"""
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    result = viralAdvertising(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+"""
