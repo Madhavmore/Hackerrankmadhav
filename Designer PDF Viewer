@@ -1,0 +1,41 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+h = list(map(int,input().rstrip().split()))
+word = input()
+# Complete the designerPdfViewer function below.
+def designerPdfViewer(h, word):
+    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    index = []
+    wrd = list(word)
+    
+    for i in range(0,len(alphabet)):
+        for j in range(0,len(wrd)):
+            if wrd[j]==alphabet[i]:
+                index.append(i)
+    newh = []
+    for i in range(0,len(index)):
+        newh.append(h[index[i]])
+    ans = max(newh)*len(wrd)
+    print(ans)
+  
+designerPdfViewer(h, word)
+"""
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    h = list(map(int, input().rstrip().split()))
+
+    word = input()
+
+    result = designerPdfViewer(h, word)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+"""
