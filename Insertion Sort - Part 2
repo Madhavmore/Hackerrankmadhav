@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+n = int(input())
+arr = list(map(int,input().rstrip().split()))
+# Complete the insertionSort2 function below.
+def insertionSort2(n, arr):
+    
+    for k in range(2,n+1):
+        new = []
+        for i in range(0,k):
+            new.append(arr[i])
+        new.sort()
+        for j in range(k,n):
+            new.append(arr[j])
+        for m in range(0,len(new)):
+            print(new[m], end = " ")
+        print()
+
+insertionSort2(n, arr)
+"""
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort2(n, arr)
+"""
