@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+s = input()
+# Complete the camelcase function below.
+def camelcase(s):
+    s1 = list(s)
+    capital = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    ans = 1
+    for i in range(0,len(s1)):
+        for j in range(0,len(capital)):
+            if s1[i]==capital[j]:
+                ans += 1
+    print(ans)
+        
+
+    
+    
+camelcase(s)
+"""
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = camelcase(s)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+"""
