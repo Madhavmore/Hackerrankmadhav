@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+nt = list(map(int,input().rstrip().split()))
+n = nt[0]
+t = nt[1]
+width = list(map(int,input().rstrip().split()))
+testcases = []
+for i in range(0,t):
+    testcases.append(list(map(int,input().rstrip().split())))
+# Complete the serviceLane function below.
+def serviceLane(width, testcases):
+    for i in range(0,len(testcases)):
+        print(min(width[testcases[i][0]:testcases[i][1]+1]))
+    
+
+    
+serviceLane(width, testcases)
