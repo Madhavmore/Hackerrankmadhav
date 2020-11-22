@@ -1,0 +1,33 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+ijk = list(map(int,input().rstrip().split()))
+i = ijk[0]
+j = ijk[1]
+k = ijk[2]
+#function to reverse
+def reverse(n):
+    # Initiate value to null
+    test_num = 0
+    while(n>0):
+        remainder = n % 10
+        test_num = (test_num * 10) + remainder
+        n = n//10
+    return test_num
+# Complete the beautifulDays function below.
+def beautifulDays(i, j, k):
+    ans = 0
+    for x in range(i,j+1):
+        ir = reverse(x)
+        dif1 = abs(ir - x)%k
+        if dif1==0:
+            ans = ans + 1
+    print(ans)
+    
+beautifulDays(i, j, k)
+
