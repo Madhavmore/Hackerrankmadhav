@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+s = input()
+# Complete the pangrams function below.
+def pangrams(s):
+    s=s.upper()
+    s1 = list(s)
+    #removing spaces
+    #s.replace(" ","")
+    #number of unwanted spaces(' ') will also become 1
+    uniq = list(set(s1))
+    #convert all ito capitals
+    #print(uniq)
+    if len(uniq)-1==26:
+        print('pangram')
+    else:
+        print('not pangram')   
+    
+pangrams(s)
+"""
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = pangrams(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+"""
