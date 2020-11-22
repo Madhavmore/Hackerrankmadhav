@@ -1,0 +1,45 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+s = input()
+# Complete the encryption function below.
+def encryption(s):
+    s1 = [i for i in list(s) if i!=' ']
+    n = len(s1)
+    a = math.floor(math.sqrt(n))
+    b = math.ceil(math.sqrt(n))
+    #a rows
+    #b columns
+    ANS=[]
+    if a!=b:
+        for j in range(0,a+1):
+            ans = s1[j]
+            r1 = []
+            for i in range(j,n,b):
+                r1.append(s1[i])
+            for k in range(1,len(r1)):
+                ans = ans+r1[k]
+            ANS.append(ans)
+        for i in range(0,len(ANS)):
+            print(ANS[i],end = " ")
+    else:
+        for j in range(0,a):
+            ans = s1[j]
+            r1 = []
+            for i in range(j,n,b):
+                r1.append(s1[i])
+            for k in range(1,len(r1)):
+                ans = ans+r1[k]
+            ANS.append(ans)
+        for i in range(0,len(ANS)):
+            print(ANS[i],end = " ")
+    #print(n)
+        
+    #print(b)
+
+encryption(s)
