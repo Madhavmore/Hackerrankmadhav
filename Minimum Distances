@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+n = int(input())
+a = list(map(int,input().rstrip().split()))
+
+# Complete the minimumDistances function below.
+def minimumDistances(a):
+    #making duplicate elements list in a
+    duplicate = []
+    for i in range(0,len(a)):
+        if a.count(a[i])>1:
+            duplicate.append(a[i])
+   
+    ANS = []
+    if len(duplicate)!=0:
+        for j in range(0,len(duplicate)):
+            ans = []
+            for k in range(0,len(a)):
+                if duplicate[j]-a[k]==0:
+                    ans.append(k)
+            ANS.append(max(ans)-min(ans))
+        print(min(ANS))
+    else:
+        print(-1)     
+
+minimumDistances(a)
