@@ -1,0 +1,50 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+n = int(input())
+s = list(map(int,input().rstrip().split()))
+dm = list(map(int,input().rstrip().split()))
+d = dm[0]
+m = dm[1]
+# Complete the birthday function below.
+def birthday(s, d, m):
+    ans2 = 0    
+    for i in range(0,len(s)):
+        ans = 0
+        if i+m<=len(s):
+            for j in range(0,m):
+                ans = ans+s[i+j]
+            if ans==d:
+                ans2 += 1
+    print(ans2)
+            
+        
+
+    
+ 
+birthday(s, d, m)
+"""    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    s = list(map(int, input().rstrip().split()))
+
+    dm = input().rstrip().split()
+
+    d = int(dm[0])
+
+    m = int(dm[1])
+
+    result = birthday(s, d, m)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+"""
