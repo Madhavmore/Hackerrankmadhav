@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+nk = list(map(int,input().rstrip().split()))
+n = nk[0]
+k = nk[1]
+bill = list(map(int,input().rstrip().split()))
+bch = int(input())
+# Complete the bonAppetit function below.
+def bonAppetit(bill, k, bch):
+    billreduce = []
+    for i in range(0,len(bill)):
+        if i!=k:
+            billreduce.append(bill[i])
+    billactual = int(0.5*sum(billreduce))
+    if billactual==bch:
+        print('Bon Appetit')
+    else:
+        print(bch - billactual)
+    
+bonAppetit(bill, k, bch)
+"""
+if __name__ == '__main__':
+    nk = input().rstrip().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    bill = list(map(int, input().rstrip().split()))
+
+    b = int(input().strip())
+
+    bonAppetit(bill, k, b)
+"""
